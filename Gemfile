@@ -1,8 +1,9 @@
 source 'https://rubygems.org'
 
-ruby '2.2.2'
+ruby '2.2.3'
 
 gem 'sinatra'
+gem 'byebug'
 
 group :test do
   gem 'rspec'
@@ -10,5 +11,6 @@ group :test do
   gem 'rubocop'
   gem 'coveralls', require: false
   gem 'capybara'
-  gem 'byebug'
+  gem 'rake'
+  gem 'shotgun'
 end
