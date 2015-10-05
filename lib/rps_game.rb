@@ -1,10 +1,5 @@
 module RPS_Game
 
-  attr_accessor :Scissors
-  attr_accessor :Rock
-  attr_accessor :Paper
-
-
 	def self.bot_move
 		%w(Rock Paper Scissors).sample
 	end

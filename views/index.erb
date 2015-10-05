@@ -1,9 +1,11 @@
-<form data-abide action="/play" method="post">
-  <div class="name-field">
-   <p><label><h5>Enter your name!</h5> <small>Required</small>
-      <input type="text" name="player_name" required pattern="[a-zA-Z]+">
-    </label></p>
-    <small class="error">A name is required</small>
-  </div>
-  <button class="button round button success button expand" type="submit" formmethod="post" formaction="/play">Play Game!</button>
+<head>
+  <meta charset="utf-8">
+  <title>Rock Paper Scissors</title>
+</head>
+
+<h2>Welcome to Rock Paper Scissors</h2>
+<h3>Enter your username.</h3>
+<form action="/play_game" method="post" >
+  <input type="text" name="username"><br><br>
+  <input type="submit" value="Continue">
 </form>
