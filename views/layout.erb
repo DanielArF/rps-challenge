@@ -1,4 +1,51 @@
+<!DOCTYPE html>
+<!--[if IE 9]>
+<html class="lt-ie10" lang="en" >
+<![endif]-->
+<html class="no-js" lang="en" >
 <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RPS Game</title>
+  <!-- normalize.css and modernizr.js help with browser compatibility -->
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/foundation.css">
+  <script src="js/vendor/modernizr.js"></script>
+</head>
+<body>
+<div class="row">
+  <div class="small-3 small-centered columns"></div>
+  <div class="small-6 small-centered columns">
+    <nav class="top-bar" data-topbar role="navigation">
+      <ul class="title-area">
+        <li class="name">
+          <h1><a href="/"><strong><header class="hero">Have a break, Have a Rock Paper Scissors
+          </header></strong></a></h1>
+        </li>
+      </ul>
+    </nav>
+
+
+    <!-- <div class="icon-bar one-up">
+      <a href="/" class="item" >
+        <img src="img/fi-home.svg" >
+        <label>Start Over</label>
+      </a>
+    </div> -->
+    <%= yield %></div>
+  <div class="small-3 small-centered columns"></div>
+</div>
+<script src="js/vendor/jquery.js"></script>
+<script src="js/foundation.min.js"></script>
+<script>
+    $(document).foundation();
+</script>
+</body>
+</html>
+
+
+<head>
+
 
   <link rel="stylesheet" href="css/foundation.css">
 
@@ -8,71 +55,24 @@
 
 </head>
 
-<nav class="top-bar" data-topbar role="navigation">
-  <ul class="title-area">
-    <li class="name">
-      <h1><a href="/">Chitter</a></h1>
-    </li>
-    <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
-  </ul>
-
-  <section class="top-bar-section">
-    <%if @user.nil? %>
-        <ul class="right">
-          <li class="active"><a href="/sign_up">Sign Up</a></li>
-          <li class="active"><a href="/sign_in">Sign In</a></li>
-        </ul>
-    <%else%>
-        <ul class="right">
-          <li class="active"><a href="">Signed in as: <%= @user.username%></a></li>
-          <li class="active"><a href="/sign_out">Sign Out</a></li>
-        </ul>
-    <%end%>
-    <%if @user.nil? %>
-        <ul class="left">
-          <li><a href="/send_peep">PeeP</a></li>
-        </ul>
-    <%else%>
-        <ul class="left">
-          <li><a href="/send_peep">Send Peep</a></li>
-          <li><a href="/send_peep">My Peeps</a></li>
-        </ul>
-    <%end%>
-  </section>
-</nav>
-
-<body>
-
-
-
-</body>
-
-
+<!-- For Foundation Icons, put this in your head -->
 <link href="http://cdnjs.cloudflare.com/ajax/libs/foundicons/3.0.0/foundation-icons.css" rel="stylesheet">
 
-<header class="hero">
-  <h3>  <i class="fi-heart" style="color: #ff0c00; font-size: 18px;"></i>  Rock, Paper and Scissors</h3>
-</header>
+<!-- Footer -->
 <footer class="footer">
-  <div class="row">
-    <div class="small-12 medium-6 large-5 columns">
-      <p class="copywrite">Copywrite not copywrite © 2015</p>
+  <div class="row full-width">
+    <div class="small-10 medium-2 large-4 columns">
+      <i class="fi-target-two" style="color: #990000; font-size: 70px;"></i>
+      <p>“You are never too old to set another goal or to dream a new dream." -C. S. Lewis</p>
     </div>
-    <div class="small-12 medium-6 large-4 columns">
-      <ul class="contact">
-        <li><p><i class="fi-marker"></i> Makers Academy Sweden Holtermansgatan 1, 411 29 Gothenburg</p></li>
-        <li><p><i class="fi-telephone"></i> 031-772 81 00</p></li>
-      </ul>
+    <div class="small-10 medium-2 large-4 columns">
+      <i class="fi-mountains" style="color: #8a8d8a; font-size: 70px;"></i>
+      <p>"No! Try not! Do or do not, there is no try." <br>-Yoda</p>
     </div>
-    <div class="small-12 medium-12 large-3 columns">
-      <p class="about"> About Chitter</p>
-      <p class="about subheader">"Strike me down, and I will become more powerful than you could possibly imagine." -Obi-Wan Kenobi </p>
-      <ul class="inline-list social">
-        <a href="#"><i class="fi-social-facebook"></i></a>
-        <a href="#"><i class="fi-social-twitter"></i></a>
-        <a href="#"><i class="fi-social-instagram"></i></a>
-        <a href="#"><i class="fi-social-github"></i></a>
-      </ul>
+    <div class="small-10 medium-2 large-4 columns">
+      <i class="fi-crown" style="color: #e3a200; font-size: 70px;"></i>
+      <p>"I hated every minute of training, but I said, ‘Don’t quit. Suffer now and live the rest of your life as a champion.” – Muhammad Ali</p>
+    </div>
     </div>
   </div>
 </footer>
