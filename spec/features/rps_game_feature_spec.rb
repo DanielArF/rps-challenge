@@ -44,10 +44,6 @@ describe 'Rock Paper Scissors'do
       click_button 'Continue'
     end
 
-    scenario 'Play game gets status code 200' do
-      expect(page.status_code).to be 200
-    end
-
     scenario 'Play game page displays input options with rock paper scissors' do
       expect(page).to have_selector "form[action='/result']"
       expect(page).to have_selector "input[type='radio']"
@@ -63,11 +59,46 @@ describe 'Rock Paper Scissors'do
     end
 
     scenario 'Play game page is routing user to ./result page after chosen player_move and click play' do
-      #byebug
       choose('player_move_rock')
       click_button 'Play'
       expect(page.current_path).to eq'/result'
       expect(page.status_code).to eq 200
+    end
+  end
+
+  feature 'Game Result' do
+
+    before(:each) do
+      visit '/'
+      fill_in 'username', :with => 'Daniel'
+      click_button 'Continue'
+    end
+
+    scenario 'Players wins with Rock over Bot Scissors' do
+      allow(RPSGame).to receive(:bot_move).and_return('Scissors')
+      choose('player_move_rock')
+      click_button 'Play'
+      expect(page.current_path).to eq '/result'
+      expect(page.status_code).to eq 200
+      expect(page).to have_content 'You won!'
+    end
+
+    scenario 'Bot wins with Scissors over Players Paper' do
+      allow(RPSGame).to receive(:bot_move).and_return('Paper')
+      choose('player_move_rock')
+      click_button 'Play'
+      expect(page.current_path).to eq '/result'
+      expect(page.status_code).to eq 200
+      expect(page).to have_content 'Bot won!'
+    end
+
+    scenario 'Players and Bot plays Rock' do
+      allow(RPSGame).to receive(:bot_move).and_return('Rock')
+      choose('player_move_rock')
+      click_button 'Play'
+      expect(page.current_path).to eq '/result'
+      expect(page.status_code).to eq 200
+      expect(page).to have_content 'Tie!'
     end
   end
 end
