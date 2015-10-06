@@ -24,7 +24,7 @@ class RPSApp < Sinatra::Base
 	post '/result' do
 		session[:name] = params[:username]
 	 	player_move = params[:player_move]
-		self.result = self.play(player_move)
+		@result = RPSGame.play(player_move)
 		erb :result
 	end
 

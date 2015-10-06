@@ -1,11 +1,11 @@
-module RPS_Game
+module RPSGame
 
 	def self.bot_move
 		%w(Rock Paper Scissors).sample
 	end
 
   def self.play(player_move)
-    case[player_move, bot_move]
+    case[player_move.capitalize, bot_move]
       when['Rock','Scissors'],['Scissors','Paper'], ['Paper', 'Rock']
         result = "You won!"
       when ['Rock', 'Rock'], ['Scissors', 'Scissors'],  ['Paper', 'Paper']
